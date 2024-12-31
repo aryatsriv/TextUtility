@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import Header from './components/shared/header'
+import SideBar from './components/shared/SideBar';
 function App() {
 
   return (
-    <>
-    <Header />
-   <div bg="light">Test</div> 
-    </>
+  <div>    
+    <SideBar/>
+   <div className="primary">
+    .<br/>.<br/>
+     .<br/>.<br/>
+      .<br/>.<br/>
+       .<br/>.<br/>
+       .<br/>.<br/>
+  </div> 
+
+    </div>
   )
 }
 
