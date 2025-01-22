@@ -10,7 +10,7 @@ export default function TopMenuBar() {
       <AppBar position="static" color="inherit" > 
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            Text Case Converter
+            Text Stream Converter
           </Typography>
           <Typography variant="h6" component="div" >
             REPORT ISSUE/SUGGEST FEATURES
