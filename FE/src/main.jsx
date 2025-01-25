@@ -3,13 +3,16 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './index.css'
 import App from './App.jsx'
+import CaseConverter from './features/caseConverter/CaseConverter.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route index element={<App />} />
+        <Route path="" element={<App />} >
+          <Route path="caseConverter" element={<CaseConverter />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
