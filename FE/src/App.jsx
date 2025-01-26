@@ -7,9 +7,7 @@ function App() {
 
   return (
     <Container maxWidth="false" disableGutters>
-
       <TopMenuBar />
-      Text
       <Outlet />
     </Container>
   )
