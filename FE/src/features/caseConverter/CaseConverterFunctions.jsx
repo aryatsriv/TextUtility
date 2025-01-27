@@ -1,21 +1,14 @@
 import { Box, Button } from "@mui/material"
 
-const CaseConverterFunctions = () => {
-
+const CaseConverterFunctions = ({ onButtonClick }) => {
+  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"], ["snake_case", "snake"]]
   return (
     <Box>
-      <Button variant="outlined" className="action_button">Lower Case</Button>
-      <Button variant="outlined" className="action_button">Upper Case</Button>
-      <Button variant="outlined" className="action_button">Sentence case</Button>
-      <Button variant="outlined" className="action_button">Capitalize Case</Button>
-      <Button variant="outlined" className="action_button">aLtErNaTiNg CaSe</Button>
-      <Button variant="outlined" className="action_button">InVeRsE CaSe</Button>
-      <Button variant="outlined" className="action_button">Lower Case</Button>
-      <Button variant="outlined" className="action_button">Upper Case</Button>
-      <Button variant="outlined" className="action_button">Sentence case</Button>
-      <Button variant="outlined" className="action_button">Capitalize Case</Button>
-      <Button variant="outlined" className="action_button">aLtErNaTiNg CaSe</Button>
-      <Button variant="outlined" className="action_button">InVeRsE CaSe</Button>
+      {buttons.map((button) => (
+        <Button sx={{ textTransform: 'none' }} key={button[1]} onClick={() => onButtonClick(button[1])}>
+          {button[0]}
+        </Button>
+      ))}
     </Box>
   )
 
