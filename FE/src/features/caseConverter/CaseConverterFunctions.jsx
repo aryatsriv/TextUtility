@@ -5,7 +5,7 @@ const CaseConverterFunctions = ({ onButtonClick }) => {
   return (
     <Box>
       {buttons.map((button) => (
-        <Button sx={{ textTransform: 'none' }} key={button[1]} onClick={() => onButtonClick(button[1])}>
+        <Button className="action_button" variant="contained" sx={{ textTransform: 'none' }} key={button[1]} onClick={() => onButtonClick(button[1])}>
           {button[0]}
         </Button>
       ))}
