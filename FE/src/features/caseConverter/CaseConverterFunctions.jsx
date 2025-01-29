@@ -1,10 +1,14 @@
 import { Box, Button } from "@mui/material"
+import { useParams } from "react-router"
 
-const CaseConverterFunctions = ({ onButtonClick }) => {
-  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"], ["snake_case", "snake"]]
+const CaseConverterFunctions = ({ buttonsList, onButtonClick }) => {
+
+  const selectedButton = useParams()
+
+
   return (
     <Box>
-      {buttons.map((button) => (
+      {buttonsList.map((button) => (
         <Button className="action_button" variant="contained" sx={{ textTransform: 'none' }} key={button[1]} onClick={() => onButtonClick(button[1])}>
           {button[0]}
         </Button>

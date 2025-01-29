@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="" element={<App />} >
           <Route path="caseConverter" element={<CaseConverter />} />
+          <Route path="caseConverter/:button" element={<CaseConverter />} />
         </Route>
       </Routes>
     </BrowserRouter>
