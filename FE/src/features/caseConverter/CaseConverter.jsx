@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material"
+import { Box, Container, Typography } from "@mui/material"
 import CaseConverterFunctions from "./CaseConverterFunctions"
 import textService from "../../services/textService.js"
 import { useState, useEffect } from "react"
@@ -36,11 +36,11 @@ const CaseConverter = () => {
   }, [inputText, selectedOption])
 
   const handleButtonSelect = (option) => {
-    setSelectedOption(option)
+    setSelectedOption(option);
     navigate(`/caseconverter/${option}`, { replace: true });
   }
   const handleInputTextChange = (event) => {
-    setInputText(event.target.value)
+    setInputText(event.target.value);
   }
   let selectedOptionWarning = null
   if (selectedOption.length == 0) {
@@ -56,9 +56,11 @@ const CaseConverter = () => {
 
   return (
     <>
-      <Container sx={{ marginTop: -2.5 }}>
+      <Container>
         <Box sx={{ backgroundColor: theme.palette.background.default }}>
-          <h1>Case Converter</h1>
+          <Typography variant="h5" sx={{ color: theme.palette.text.primary, mt: 3, mb: 2 }}>
+            Text Stream Converter
+          </Typography>
           {selectedOptionWarning}
           <CaseConverterFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} />
           <CaseConverterInput inputText={inputText} handleInputTextChange={handleInputTextChange} />
