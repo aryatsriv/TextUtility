@@ -1,20 +1,31 @@
 import { Box, Button, useTheme } from "@mui/material"
 import { useParams } from "react-router"
 
-const CaseConverterFunctions = ({ buttonsList, onButtonClick }) => {
+const CaseConverterFunctions = ({ buttonsList, onButtonClick, selectedButton }) => {
   const theme = useTheme();
-  const selectedButton = useParams()
-
 
   return (
     <Box>
-      {buttonsList.map((button) => (
-        <Button variant="contained" sx={{ textTransform: 'none', backgroundColor: theme.palette.background.paper, color: theme.palette.text.primary, mr: 1 }} key={button[1]} onClick={() => onButtonClick(button[1])}>
-
-          {button[0]}
-        </Button>
-      ))}
-    </Box>
+      {buttonsList.map((button) => {
+        const isSelected = button[1] == selectedButton;
+        return (
+          <Button
+            variant="contained"
+            key={button[1]}
+            onClick={() => onButtonClick(button[1])}
+            sx=
+            {{
+              textTransform: 'none',
+              backgroundColor: isSelected ? theme.palette.background.selected : theme.palette.background.paper,
+              color: isSelected ? theme.palette.text.selected : theme.palette.text.primary,
+              mr: 1
+            }}
+          >
+            {button[0]}
+          </Button>
+        )
+      })}
+    </Box >
   )
 
 }

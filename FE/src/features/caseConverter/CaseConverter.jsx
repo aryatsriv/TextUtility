@@ -62,7 +62,7 @@ const CaseConverter = () => {
             Text Stream Converter
           </Typography>
           {selectedOptionWarning}
-          <CaseConverterFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} />
+          <CaseConverterFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} selectedButton={selectedOption} />
           <CaseConverterInput inputText={inputText} handleInputTextChange={handleInputTextChange} />
           <CaseConverterOutput resultText={resultText} />
         </Box>

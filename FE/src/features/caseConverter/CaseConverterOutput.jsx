@@ -8,7 +8,7 @@ const CaseConverterOutput = ({ resultText }) => {
     <>
       <h3>Result:</h3>
       <TextField label="Result"
-        id="convert-case-input"
+        id="convert-case-output"
         aria-label="convert case input"
         multiline
         rows={10}

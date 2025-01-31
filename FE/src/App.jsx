@@ -14,11 +14,14 @@ const theme = createTheme({
     },
     background: {
       default: "#f7f7f7", // Default background color
-      paper: "#ffffff", // Background color for cards or containers
+      paper: "#ffffff",
+      selected: "#353A3A"// Background color for cards or containers
     },
     text: {
       primary: "#000000", // Primary text color
-      secondary: "#555555", // Secondary text color
+      secondary: "#555555",
+      selected: '#FFFFFF'
+      // Secondary text color
     },
   },
   typography: {
