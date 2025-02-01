@@ -18,7 +18,8 @@ const CaseConverterFunctions = ({ buttonsList, onButtonClick, selectedButton }) 
               textTransform: 'none',
               backgroundColor: isSelected ? theme.palette.background.selected : theme.palette.background.paper,
               color: isSelected ? theme.palette.text.selected : theme.palette.text.primary,
-              mr: 1
+              mr: 1,
+              mt: 1
             }}
           >
             {button[0]}
