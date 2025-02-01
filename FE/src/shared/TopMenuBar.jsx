@@ -11,7 +11,7 @@ export default function TopMenuBar() {
       <AppBar elevation={0} position="static" sx={{ backgroundColor: theme.palette.background.paper }} >
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ color: theme.palette.text.primary }}>
-            Daily Text Utility
+            Daily Text Tool
           </Typography>
         </Toolbar>
       </AppBar>
