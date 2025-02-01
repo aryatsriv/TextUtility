@@ -6,13 +6,14 @@ import { useTheme } from "@mui/material/styles";
 import CaseConverterInput from "./CaseConverterInput.jsx";
 import CaseConverterOutput from "./CaseConverterOutput.jsx";
 import { useNavigate, useParams } from "react-router";
+import CaseConverterDescription from "./CaseConverterDescription.jsx";
 
 const CaseConverter = () => {
   const theme = useTheme();
   const [inputText, setInputText] = useState('');
   const [resultText, setResultText] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
-  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"]]
+  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Title Case/Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"]]
   const params = useParams();
   const navigate = useNavigate();
 
@@ -59,12 +60,13 @@ const CaseConverter = () => {
       <Container>
         <Box sx={{ backgroundColor: theme.palette.background.default }}>
           <Typography variant="h5" sx={{ color: theme.palette.text.primary, mt: 3, mb: 2 }}>
-            Text Stream Converter
+            Case Converter
           </Typography>
           {selectedOptionWarning}
           <CaseConverterFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} selectedButton={selectedOption} />
           <CaseConverterInput inputText={inputText} handleInputTextChange={handleInputTextChange} />
           <CaseConverterOutput resultText={resultText} />
+          <CaseConverterDescription />
         </Box>
       </Container>
     </>
