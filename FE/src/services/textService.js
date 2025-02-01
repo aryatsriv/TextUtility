@@ -8,7 +8,12 @@ const textService = {
 				return textService.convertToUpperCase(text);
 			case "sentence":
 				return textService.convertToSentenceCase(text);
-
+			case "capitalize":
+				return textService.convertToCapitalizeCase(text);
+			case "alternating":
+				return textService.convertToAlternatingCase(text);
+			case "inverse":
+				return textService.convertToInverseCase(text);
 		}
 	},
 
@@ -40,9 +45,66 @@ const textService = {
 			else if (arr[i] == '.') {
 				isDot = true;
 			}
+			else if (arr[i] != ' ') {
+				isDot = false;
+			}
 		}
 		return arr.join("");
 	},
+
+	convertToCapitalizeCase: (text) => {
+		if (typeof text != 'string') {
+			throw new Error("Input must be string");
+		}
+		let arr = text.split("")
+		let isSpace = true;
+		for (let i = 0; i < arr.length; i++) {
+			if (isSpace && textService.isAlphabet(arr[i])) {
+				arr[i] = arr[i].toUpperCase();
+				isSpace = false
+			}
+			else if (arr[i] == ' ') {
+				isSpace = true
+			}
+			else {
+				isSpace = false
+			}
+
+		}
+		return arr.join("")
+
+	},
+
+	convertToAlternatingCase: (text) => {
+		if (typeof text != 'string') {
+			throw new Error('Input must be string')
+		}
+		let prevLarge = false
+		let arr = text.split('')
+		for (let i = 0; i < arr.length; i++) {
+			if (textService.isAlphabet(arr[i])) {
+				arr[i] = prevLarge ? arr[i] : arr[i].toUpperCase()
+				prevLarge = !prevLarge
+			}
+		}
+		return arr.join("")
+	},
+
+	convertToInverseCase: (text) => {
+		if (typeof text != 'string') {
+			throw new Error('Input must be string')
+		}
+		let prevLarge = true
+		let arr = text.split('')
+		for (let i = 0; i < arr.length; i++) {
+			if (textService.isAlphabet(arr[i])) {
+				arr[i] = prevLarge ? arr[i] : arr[i].toUpperCase()
+				prevLarge = !prevLarge
+			}
+		}
+		return arr.join("")
+	},
+
 
 	isAlphabet: (c) => {
 		const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
