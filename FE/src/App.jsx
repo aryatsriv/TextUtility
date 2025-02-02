@@ -2,7 +2,7 @@ import './App.css'
 import TopMenuBar from './shared/TopMenuBar'
 import { Outlet } from 'react-router'
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline, Container, Typography } from "@mui/material";
+import { CssBaseline, Container } from "@mui/material";
 
 const theme = createTheme({
   palette: {
