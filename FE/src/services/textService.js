@@ -83,7 +83,7 @@ const textService = {
 		let arr = text.split('')
 		for (let i = 0; i < arr.length; i++) {
 			if (textService.isAlphabet(arr[i])) {
-				arr[i] = prevLarge ? arr[i] : arr[i].toUpperCase()
+				arr[i] = prevLarge ? arr[i].toLowerCase() : arr[i].toUpperCase()
 				prevLarge = !prevLarge
 			}
 		}
@@ -98,7 +98,7 @@ const textService = {
 		let arr = text.split('')
 		for (let i = 0; i < arr.length; i++) {
 			if (textService.isAlphabet(arr[i])) {
-				arr[i] = prevLarge ? arr[i] : arr[i].toUpperCase()
+				arr[i] = prevLarge ? arr[i].toLowerCase() : arr[i].toUpperCase()
 				prevLarge = !prevLarge
 			}
 		}
