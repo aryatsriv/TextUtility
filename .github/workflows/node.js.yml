@@ -30,5 +30,7 @@ jobs:
     - run: |
         cd FE
         npm ci
-    - run: npm run build --if-present
+    - run: |
+        cd FE
+        npm run build --if-present
 
