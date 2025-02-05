@@ -14,7 +14,10 @@ const textService = {
 				return textService.convertToAlternatingCase(text);
 			case "inverse":
 				return textService.convertToInverseCase(text);
+			case "toggle":
+				return textService.convertToToggleCase(text);
 		}
+
 	},
 
 	convertToLowerCase: (text) => {
@@ -103,6 +106,31 @@ const textService = {
 			}
 		}
 		return arr.join("")
+	},
+
+	convertToToggleCase: (text) => {
+		if (typeof text != 'string') {
+			throw new Error('Input must be string')
+		}
+		let shouldBeSmall = true
+		let arr = text.split('')
+		for (let i = 0; i < arr.length; i++) {
+			if (textService.isAlphabet(arr[i])) {
+				arr[i] = shouldBeSmall ? arr[i].toLowerCase() : arr[i].toUpperCase()
+				shouldBeSmall = false
+			}
+			else if (arr[i] == ' ') {
+				shouldBeSmall = true
+
+			}
+			else {
+				shouldBeSmall = false
+			}
+
+		}
+
+		return arr.join("")
+
 	},
 
 

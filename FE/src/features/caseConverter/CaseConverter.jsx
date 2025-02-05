@@ -13,7 +13,7 @@ const CaseConverter = () => {
   const [inputText, setInputText] = useState('');
   const [resultText, setResultText] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
-  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Title Case/Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"]]
+  const buttons = [["lower case", "lower"], ["UPPER CASE", "upper"], ["Sentence case", "sentence"], ["Title Case/Capitalize Case", "capitalize"], ["AlTeRnAtInG cAsE", "alternating"], ["iNvErSe CaSe", "inverse"], ["tOOGLE cASE", "toggle"]]
   const params = useParams();
   const navigate = useNavigate();
 
