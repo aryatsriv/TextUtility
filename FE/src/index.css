@@ -8,3 +8,9 @@
    margin: 0;
    padding: 0;
 }
+
+.shrink-page {
+   margin-left: 240px; /* Adjust this value to match the drawer width */
+   transition: margin 0.3s ease-out;
+}
+

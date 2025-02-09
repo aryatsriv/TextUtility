@@ -1,52 +1,29 @@
 import './App.css'
-import TopMenuBar from './shared/TopMenuBar'
+import TopMenuBar from './shared/menu/TopMenuBar'
 import { Outlet } from 'react-router'
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline, Container } from "@mui/material";
+import theme from './shared/theme.js'
+import { ThemeProvider } from '@mui/material/styles'
+import { Container, CssBaseline } from '@mui/material'
+import { useState } from 'react'
+import SideDrawer from './shared/menu/drawer/SideDrawer'
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#1976d2", // Primary color
-    },
-    secondary: {
-      main: "#dc004e", // Secondary color
-    },
-    background: {
-      default: "#f7f7f7", // Default background color
-      paper: "#ffffff",
-      selected: "#353A3A"// Background color for cards or containers
-    },
-    text: {
-      primary: "#000000", // Primary text color
-      secondary: "#555555",
-      selected: '#FFFFFF'
-      // Secondary text color
-    },
-  },
-  typography: {
-    fontFamily: "Roboto, Arial, sans-serif",
-    h1: {
-      fontSize: "2.5rem",
-      fontWeight: 700,
-    },
-    body1: {
-      fontSize: "1rem",
-      color: "#333333",
-    },
-  },
-  spacing: 8, // Default spacing unit (1 = 8px)
-});
+
 
 function App() {
+const [open, setOpen] = useState(false)
 
+  function handleSetOpen() {
+    setOpen(!open)
+  }
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="false" disableGutters>
-
-        <TopMenuBar />
-        <Outlet className="outlet-main" />
+      <div className={open ? "shrink-page" : ""}>
+          <TopMenuBar handleSetOpen={handleSetOpen} />
+          <SideDrawer open={open} handleSetOpen={handleSetOpen} />
+          <Outlet className="outlet-main" />
+      </div>
       </Container>
     </ThemeProvider>
   )
