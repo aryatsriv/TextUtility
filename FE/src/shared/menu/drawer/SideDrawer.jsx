@@ -1,41 +1,37 @@
 import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/Inbox";
-import { SwipeableDrawer,List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider} from "@mui/material";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, styled, IconButton } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import { DrawerWidth, DrawerHeader } from "../AppBar.jsx"
 
-const drawerWidth = 240;
 
-const SideDrawer = ({ open, handleSetOpen }) => {
-  const theme = useThem();
+
+const SideDrawer = ({ open, handleDrawerClose }) => {
+  const theme = useTheme();
   return (
-    <SwipeableDrawer
+    <Drawer
+      sx={{
+        width: DrawerWidth,
+        flexShrink: 0,
+        '& .MuiDrawer-paper': { width: DrawerWidth, boxSizing: 'border-box' },
+      }}
+      variant="persistent"
       anchor="left"
       open={open}
-      onClose={() => handleSetOpen(false)}
-      onOpen={() => handleSetOpen(true)}
-      sx={{
-        backgroundColor: theme.palette.background.paper,
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-          position: 'fixed',
-          left: 0,
-          top: 0,
-          height: '100%',
-          transition: 'margin 0.3s ease-out',
-          marginLeft: open ? 0 : `-${drawerWidth}px`,
-        },
-      }}
     >
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        </IconButton>
+      </DrawerHeader>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -43,19 +39,16 @@ const SideDrawer = ({ open, handleSetOpen }) => {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-    </SwipeableDrawer>
+    </Drawer>
   );
-};
-
+}
 export default SideDrawer;

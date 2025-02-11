@@ -11,7 +11,7 @@ const theme = createTheme({
     background: {
       default: "#f7f7f7", // Default background color
       paper: "#ffffff",
-      selected: "#353A3A"// Background color for cards or containers
+      selected: "#1976D2"// Background color for cards or containers
     },
     text: {
       primary: "#000000", // Primary text color
