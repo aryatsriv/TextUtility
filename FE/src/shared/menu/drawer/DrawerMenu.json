@@ -1,0 +1,12 @@
+[
+	{
+		"id":1,
+		"menuText":"CaseCoverter",
+		"url":"Text"
+	},
+	{
+		"id":2,
+		"menuText":"CaseCoverter2",
+		"url":"Text2"
+	}
+]

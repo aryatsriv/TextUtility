@@ -1,13 +1,8 @@
-import MailIcon from "@mui/icons-material/Mail";
-import InboxIcon from "@mui/icons-material/Inbox";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, styled, IconButton } from "@mui/material";
+import { Drawer, Divider } from "@mui/material";
 import { useTheme } from "@emotion/react";
-import { DrawerWidth, DrawerHeader } from "../AppBar.jsx"
-
-
-
+import { DrawerWidth } from "../AppBarStyling"
+import SideDrawerHeader from "./SideDrawerHeader";
+import SideDrawerContent from "./SideDrawerContent";
 const SideDrawer = ({ open, handleDrawerClose }) => {
   const theme = useTheme();
   return (
@@ -21,33 +16,9 @@ const SideDrawer = ({ open, handleDrawerClose }) => {
       anchor="left"
       open={open}
     >
-      <DrawerHeader>
-        <IconButton onClick={handleDrawerClose}>
-          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-      </DrawerHeader>
+      <SideDrawerHeader handleDrawerClose={handleDrawerClose} />
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <SideDrawerContent />
     </Drawer>
   );
 }

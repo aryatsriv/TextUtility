@@ -3,7 +3,7 @@ import TopMenuBar from "./shared/menu/TopMenuBar";
 import SideDrawer from "./shared/menu/drawer/SideDrawer";
 import { useState } from "react";
 import { Outlet } from "react-router";
-import { DrawerHeader, Main } from "./shared/menu/AppBar";
+import { DrawerHeader, Main } from "./shared/menu/AppBarStyling";
 
 const StartPage = () => {
   const [open, setOpen] = useState(false)

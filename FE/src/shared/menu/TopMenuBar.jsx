@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@emotion/react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar } from './AppBar';
+import { AppBar } from './AppBarStyling';
 
 export default function TopMenuBar({ open, handleDrawerOpen }) {
   return (
@@ -18,7 +18,7 @@ export default function TopMenuBar({ open, handleDrawerOpen }) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Persistent drawer
+          Daily Utility
         </Typography>
       </Toolbar>
     </AppBar>
