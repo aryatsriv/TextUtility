@@ -29,7 +29,7 @@ const CaseConverter = () => {
     else {
       setSelectedOption('')
     }
-  }, [])
+  }, [params.button])
 
   useEffect(() => {
     setResultText(textService.convertCase(selectedOption, inputText));

@@ -1,13 +1,14 @@
 
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider } from "@mui/material";
-import MailIcon from "@mui/icons-material/Mail";
-import InboxIcon from "@mui/icons-material/Inbox";
 import drawerMenuData from "./DrawerMenu.json";
 import { useEffect, useState } from "react";
-
+import {
+	useNavigate
+} from "react-router";
 const SideDrawerContent = () => {
-	const [menuItems, setMenuItems] = useState([])
+	const [menuItems, setMenuItems] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		try {
@@ -19,20 +20,33 @@ const SideDrawerContent = () => {
 			setLoading(false)
 		}
 	}, []);
-	return (
-		<>
-			{menuItems.map((item, index) => (
-				<ListItem key={item.id} disablePadding>
-					<ListItemButton>
-						<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-						<ListItemText primary={item.menuText} />
-					</ListItemButton>
-				</ListItem>
-			))}
-			<Divider />
 
-		</>
-	)
+
+
+	return (
+		<List>
+			{menuItems.map((item) => (
+				<span key={item.id} >
+					<ListItem disablePadding>
+						<ListItemButton>
+							<ListItemText primary={"•  " + item.menuText} onClick={() => { navigate(item.url) }} />
+						</ListItemButton>
+					</ListItem>
+					{item.children && (
+						<List component="div" disablePadding>
+							{item.children.map((child) => (
+								<ListItem key={child.id} sx={{ pl: 2 }} disablePadding>
+									<ListItemButton>
+										<ListItemText primary={"• " + child.menuText} onClick={() => { navigate(item.url + "/" + child.url) }} />
+									</ListItemButton>
+								</ListItem>
+							))}
+						</List>
+					)}
+					<Divider />
+				</span>
+			))}
+		</List>)
 }
 
 export default SideDrawerContent;

@@ -2,11 +2,24 @@
 	{
 		"id":1,
 		"menuText":"CaseCoverter",
-		"url":"Text"
+		"url":"caseconverter",
+		"children":[
+			{
+			"id":"11",
+			"menuText":"convert text to lower case",
+			"url":"lower"
+			},
+			{
+			"id":"12",
+			"menuText":"CONVERT TEXT TO UPPER CASE",
+			"url":"upper"
+			}
+
+		]
 	},
 	{
 		"id":2,
-		"menuText":"CaseCoverter2",
+		"menuText":"CaseCoverter3",
 		"url":"Text2"
 	}
 ]
