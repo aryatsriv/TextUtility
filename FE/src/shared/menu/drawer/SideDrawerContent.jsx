@@ -27,17 +27,17 @@ const SideDrawerContent = () => {
 		<List>
 			{menuItems.map((item) => (
 				<span key={item.id} >
-					<ListItem disablePadding>
+					<ListItem disablePadding onClick={() => { navigate(item.url) }}>
 						<ListItemButton>
-							<ListItemText primary={"•  " + item.menuText} onClick={() => { navigate(item.url) }} />
+							<ListItemText primary={"•  " + item.menuText} />
 						</ListItemButton>
 					</ListItem>
 					{item.children && (
 						<List component="div" disablePadding>
 							{item.children.map((child) => (
-								<ListItem key={child.id} sx={{ pl: 2 }} disablePadding>
+								<ListItem key={child.id} sx={{ pl: 2 }} disablePadding onClick={() => { navigate(item.url + "/" + child.url) }}>
 									<ListItemButton>
-										<ListItemText primary={"• " + child.menuText} onClick={() => { navigate(item.url + "/" + child.url) }} />
+										<ListItemText primary={"• " + child.menuText} />
 									</ListItemButton>
 								</ListItem>
 							))}

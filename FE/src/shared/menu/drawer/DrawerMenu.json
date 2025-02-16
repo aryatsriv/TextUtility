@@ -13,8 +13,33 @@
 			"id":"12",
 			"menuText":"CONVERT TEXT TO UPPER CASE",
 			"url":"upper"
+			},
+			{
+			"id":"13",
+			"menuText":"Convert text to Sentence case",
+			"url":"sentence"
+			},
+			{
+			"id":"14",
+			"menuText":"Convert text to Title Case/Capitalize Case",
+			"url":"capitalize"
+			},
+			{
+			"id":"15",
+			"menuText":"Convert text to AlTeRnAtInG cAsE",
+			"url":"alternating"
+			},
+			{
+			"id":"16",
+			"menuText":"Convert text to iNvErSe CaSe",
+			"url":"inverse"
+			},
+			{
+			"id":"17",
+			"menuText":"Convert text to tOOGLE cASE",
+			"url":"toggle"
 			}
-
+			
 		]
 	},
 	{
