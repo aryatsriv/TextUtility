@@ -16,7 +16,7 @@
 			},
 			{
 			"id":"13",
-			"menuText":"Convert text to Sentence case",
+			"menuText":"Convert text to sentence case",
 			"url":"sentence"
 			},
 			{

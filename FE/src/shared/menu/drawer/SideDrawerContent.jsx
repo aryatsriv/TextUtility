@@ -37,7 +37,7 @@ const SideDrawerContent = () => {
 							{item.children.map((child) => (
 								<ListItem key={child.id} sx={{ pl: 2 }} disablePadding onClick={() => { navigate(item.url + "/" + child.url) }}>
 									<ListItemButton>
-										<ListItemText primary={"• " + child.menuText} />
+										<ListItemText primary={"- " + child.menuText} />
 									</ListItemButton>
 								</ListItem>
 							))}
