@@ -10,14 +10,17 @@ const SideDrawer = ({ open, handleDrawerClose }) => {
       sx={{
         width: DrawerWidth,
         flexShrink: 0,
-        '& .MuiDrawer-paper': { width: DrawerWidth, boxSizing: 'border-box' },
+        '& .MuiDrawer-paper': {
+          width: DrawerWidth,
+          boxSizing: 'border-box',
+          border: 'none'
+        },
       }}
       variant="persistent"
       anchor="left"
       open={open}
     >
       <SideDrawerHeader handleDrawerClose={handleDrawerClose} />
-      <Divider />
       <SideDrawerContent />
     </Drawer>
   );

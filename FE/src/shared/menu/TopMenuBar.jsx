@@ -6,14 +6,24 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar } from './AppBarStyling';
 
 export default function TopMenuBar({ open, handleDrawerOpen }) {
+  const theme = useTheme()
   return (
-    <AppBar position="fixed" open={open} onClick={handleDrawerOpen}>
+    <AppBar position="fixed"
+      open={open}
+      onClick={handleDrawerOpen}
+      sx={{
+        backgroundColor: theme.palette.background.paper,
+        boxShadow: 'none'
+      }}>
       <Toolbar>
         <IconButton
-          color="inherit"
           aria-label="open drawer"
           edge="start"
-          sx={{ mr: 2, ...(open && { display: 'none' }) }}
+          sx={{
+            color: theme.palette.text.primary,
+            mr: 2,
+            ...(open && { display: 'none' })
+          }}
         >
           <MenuIcon />
         </IconButton>
@@ -22,6 +32,5 @@ export default function TopMenuBar({ open, handleDrawerOpen }) {
         </Typography>
       </Toolbar>
     </AppBar>
-
   );
 }

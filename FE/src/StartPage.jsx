@@ -20,7 +20,7 @@ const StartPage = () => {
     <Box sx={{ display: 'flex' }}>
       <TopMenuBar open={open} handleDrawerOpen={handleDrawerOpen} />
       <SideDrawer open={open} handleDrawerClose={handleDrawerClose} />
-      <Main open={open}>
+      <Main open={false}>
         <Box sx={{ width: "100vw" }}>
           <DrawerHeader />
           <Outlet className="outlet-main" />
