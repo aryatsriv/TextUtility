@@ -30,15 +30,34 @@ const SideDrawerContent = () => {
 					<ListItem disablePadding onClick={() => { navigate(item.url) }}>
 						<ListItemButton>
 							<ListItemText
-								primary={item.menuText}
+								primary=<b>{item.menuText}</b>
 								sx={{ fontWeight: 'bold' }}
 							/>
 						</ListItemButton>
 					</ListItem>
 					{item.children && (
-						<List component="div" disablePadding>
+						< List
+							component="div"
+							disablePadding
+							sx={{
+								position: 'relative',
+								ml: 2,
+								pl: 1,
+								borderLeft: '2px solid #666666', // Vertical line
+							}}
+						>
 							{item.children.map((child) => (
-								<ListItem key={child.id} sx={{ pl: 2 }} disablePadding onClick={() => { navigate(item.url + "/" + child.url) }}>
+								<ListItem
+									key={child.id}
+									disablePadding
+									onClick={() => {
+										navigate(item.url + "/" + child.url);
+									}}
+									sx={{
+										pl: 2,
+										position: 'relative',
+									}}
+								>
 									<ListItemButton>
 										<ListItemText primary={child.menuText} />
 									</ListItemButton>
@@ -46,10 +65,10 @@ const SideDrawerContent = () => {
 							))}
 						</List>
 					)}
-					<Divider />
 				</span>
 			))}
-		</List>)
+		</List>
+	)
 }
 
 export default SideDrawerContent;
