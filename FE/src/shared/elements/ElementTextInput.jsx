@@ -1,7 +1,7 @@
 import { useTheme } from "@emotion/react"
 import { TextField } from "@mui/material"
 
-const CaseConverterInput = ({ inputText, handleInputTextChange }) => {
+const ElementTextInput = ({ inputText, handleInputTextChange }) => {
   const theme = useTheme();
   return (
 
@@ -25,4 +25,4 @@ const CaseConverterInput = ({ inputText, handleInputTextChange }) => {
   )
 }
 
-export default CaseConverterInput
+export default ElementTextInput

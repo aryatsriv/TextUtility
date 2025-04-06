@@ -1,10 +1,10 @@
 import { Box, Container, Typography } from "@mui/material"
-import CaseConverterFunctions from "./CaseConverterFunctions"
+import ElementClickFunctions from "../../shared/elements/ElementClickFunctions.jsx"
 import textService from "../../services/textService.js"
 import { useState, useEffect } from "react"
 import { useTheme } from "@mui/material/styles";
-import CaseConverterInput from "./CaseConverterInput.jsx";
-import CaseConverterOutput from "./CaseConverterOutput.jsx";
+import ElementTextInput from "../../shared/elements/ElementTextInput.jsx";
+import ElementTextOutput from "../../shared/elements/ElementTextOutput.jsx";
 import { useNavigate, useParams } from "react-router";
 import CaseConverterDescription from "./CaseConverterDescription.jsx";
 
@@ -63,9 +63,9 @@ const CaseConverter = () => {
             Case Converter
           </Typography>
           {selectedOptionWarning}
-          <CaseConverterFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} selectedButton={selectedOption} />
-          <CaseConverterInput inputText={inputText} handleInputTextChange={handleInputTextChange} />
-          <CaseConverterOutput resultText={resultText} />
+          <ElementClickFunctions onButtonClick={handleButtonSelect} buttonsList={buttons} selectedButton={selectedOption} />
+          <ElementTextInput inputText={inputText} handleInputTextChange={handleInputTextChange} />
+          <ElementTextOutput resultText={resultText} />
           <CaseConverterDescription />
         </Box>
       </Container>

@@ -36,7 +36,7 @@
 			},
 			{
 			"id":"17",
-			"menuText":"Convert text to tOOGLE cASE",
+			"menutext":"convert text to toogle case",
 			"url":"toggle"
 			}
 			
@@ -44,7 +44,15 @@
 	},
 	{
 		"id":2,
-		"menuText":"CaseCoverter3",
-		"url":"Text2"
+		"menuText":"TextFormatter",
+		"url":"textFormatter",
+		"children":[
+			{
+				"id":"21",
+				"menuText":"Bold Text",
+				"url":"bold"
+			}
+		]
+
 	}
 ]

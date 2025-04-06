@@ -1,7 +1,6 @@
 import { Box, Button, useTheme } from "@mui/material"
-import { useParams } from "react-router"
 
-const CaseConverterFunctions = ({ buttonsList, onButtonClick, selectedButton }) => {
+const ElementClickFunctions = ({ buttonsList, onButtonClick, selectedButton }) => {
   const theme = useTheme();
 
   return (
@@ -31,4 +30,4 @@ const CaseConverterFunctions = ({ buttonsList, onButtonClick, selectedButton }) 
 
 }
 
-export default CaseConverterFunctions;
+export default ElementClickFunctions;
