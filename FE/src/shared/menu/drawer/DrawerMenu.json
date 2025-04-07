@@ -1,42 +1,42 @@
 [
 	{
 		"id":1,
-		"menuText":"CaseCoverter",
+		"menuText":"Convert case",
 		"url":"caseconverter",
 		"children":[
 			{
 			"id":"11",
-			"menuText":"convert text to lower case",
+			"menuText":"Convert Text to Lower Case",
 			"url":"lower"
 			},
 			{
 			"id":"12",
-			"menuText":"CONVERT TEXT TO UPPER CASE",
+			"menuText":"Conver Text to Upper Case",
 			"url":"upper"
 			},
 			{
 			"id":"13",
-			"menuText":"Convert text to sentence case",
+			"menuText":"Convert Text to Sentence Case",
 			"url":"sentence"
 			},
 			{
 			"id":"14",
-			"menuText":"Convert text to Title Case/Capitalize Case",
+			"menuText":"Convert Text to Title Case/Capitalize Case",
 			"url":"capitalize"
 			},
 			{
 			"id":"15",
-			"menuText":"Convert text to AlTeRnAtInG cAsE",
+			"menuText":"Convert Text to Alternating case",
 			"url":"alternating"
 			},
 			{
 			"id":"16",
-			"menuText":"Convert text to iNvErSe CaSe",
+			"menuText":"Convert Text to Inverse Case",
 			"url":"inverse"
 			},
 			{
 			"id":"17",
-			"menutext":"convert text to toogle case",
+			"menutext":"Convert Text to Toogle Case",
 			"url":"toggle"
 			}
 			
@@ -44,13 +44,23 @@
 	},
 	{
 		"id":2,
-		"menuText":"TextFormatter",
+		"menuText":"Format text",
 		"url":"textFormatter",
 		"children":[
 			{
 				"id":"21",
-				"menuText":"Bold Text",
+				"menuText":"Convert Text to Bold",
 				"url":"bold"
+			},
+			{
+				"id":"22",
+				"menuText":"Convert Text to Itallic",
+				"url":"italic"
+			},
+			{
+				"id":"23",
+				"menuText":"Convert Text to Underline",
+				"url":"underline"
 			}
 		]
 
