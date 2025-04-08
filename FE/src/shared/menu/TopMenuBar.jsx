@@ -27,10 +27,14 @@ export default function TopMenuBar({ open, handleDrawerOpen }) {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap>
+
+        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }}>
           Daily Utility
         </Typography>
+        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }}>
+          Report Issue
+        </Typography>
       </Toolbar>
-    </AppBar>
+    </AppBar >
   );
 }
