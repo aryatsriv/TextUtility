@@ -4,13 +4,14 @@ import { useTheme } from '@emotion/react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar } from './AppBarStyling';
+import { useNavigate } from 'react-router';
 
 export default function TopMenuBar({ open, handleDrawerOpen }) {
   const theme = useTheme()
+  const navigate = useNavigate()
   return (
     <AppBar position="fixed"
       open={open}
-      onClick={handleDrawerOpen}
       sx={{
         backgroundColor: theme.palette.background.paper,
         boxShadow: 'none'
@@ -19,6 +20,8 @@ export default function TopMenuBar({ open, handleDrawerOpen }) {
         <IconButton
           aria-label="open drawer"
           edge="start"
+          onClick={handleDrawerOpen}
+
           sx={{
             color: theme.palette.text.primary,
             mr: 2,
@@ -28,11 +31,11 @@ export default function TopMenuBar({ open, handleDrawerOpen }) {
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }}>
-          Daily Utility
+        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }} onClick={() => { navigate("") }} >
+          DailyUtility
         </Typography>
-        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }}>
-          Report Issue
+        <Typography variant="h6" noWrap sx={{ color: theme.palette.text.primary, marginLeft: 3 }} onClick={() => { navigate("/issues") }}>
+          Report Issue/Suggest Feature
         </Typography>
       </Toolbar>
     </AppBar >
